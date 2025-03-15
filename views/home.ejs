@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/header") %>
+    <title>Home Page</title>
+    <style>
+        body {
+            background: #F8F9FA;
+            font-family: 'Roboto', sans-serif;
+            color: #212529;
+        }
+        .card {
+            width: 18rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 1rem;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #343A40;
+            margin-bottom: 0.5rem;
+        }
+        .card-text {
+            flex-grow: 1;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #6c757d;
+            line-height: 1.4;
+        }
+        .btn {
+            align-self: flex-start;
+            background: #343A40;
+            color: #fff;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background: #fff;
+            color: #343A40;
+            transform: scale(1.02);
+        }
+        .container {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <%- include("./partials/navbar") %>
+    <% if (locals.user) { %>
+        <div class="container d-flex gap-3 flex-wrap">
+            <% blog.forEach(blog => { %>
+                <div class="card">
+                    <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= blog.title %></h5>
+                      <p class="card-text"><%= blog.body %></p>
+                      <a href="/blog/<%= blog._id %>" class="btn">View</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <!-- Content for non-logged in users (optional) -->
+    <% } %>
+    <%- include("./partials/scripts") %>
+</body>
+</html>

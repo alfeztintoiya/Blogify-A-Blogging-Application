@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/header") %>
+    <title>Add Blog</title>
+    <link rel="icon" type="image/png" href="./images/blogify-favicon.png">
+    <style>
+      body {
+        background: #F8F9FA;
+        font-family: 'Roboto', sans-serif;
+        color: #212529;
+      }
+      .container {
+        margin-top: 2rem;
+        max-width: 600px;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+      .btn-primary {
+        background: #343A40;
+        border: none;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+      .btn-primary:hover {
+        background: #fff;
+        color: #343A40;
+        transform: scale(1.02);
+      }
+    </style>
+</head>
+<body>
+    <%- include("./partials/navbar") %>
+    <div class="container">
+        <form action="/blog" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="coverImage" class="form-label">Cover Image</label>
+                <input type="file" class="form-control" id="coverImage" name="coverImage" />
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" />
+            </div>
+            <div class="mb-3">
+                <label for="body">Body</label>
+                <textarea class="form-control" name="body" placeholder="Write Content here" id="body"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div> 
+    <%- include("./partials/scripts") %>
+</body>
+</html>

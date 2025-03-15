@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/header") %>
+    <title>Sign Up</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .navbar{
+            width: 100%;
+        }
+        .container{
+            width: 28%;
+            margin-top: 18vh;
+        }
+
+        .btn {
+            align-self: center;
+            background: #343A40;
+            color: #fff;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background: #fff;
+            color: #343A40;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <%- include("./partials/navbar") %> 
+    <div class="container"> 
+        <form action="/user/signup" method="post">
+            <div class="form-floating mb-3">
+                <input type="name" class="form-control is-not-invalid" id="floatingInput" placeholder="name@example.com" name="name">
+                <label for="floatingInput">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control is-not-invalid" id="floatingInput" placeholder="name@example.com" name="email">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control is-not-invalid" id="floatingPassword" placeholder="Password" name="password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <%- include("./partials/scripts") %>
+</body>
+</html>
