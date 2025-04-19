@@ -63,7 +63,7 @@ blogify/
 ├── middleware/         # Auth, error handling, etc.
 ├── services/           # JWT Authentication
 └── app.js           # App entry point
-
+```
 
 ## Usage
 
@@ -88,12 +88,15 @@ Contributions are welcome! Please follow these steps:
 4. Push to your branch (`git push origin feature/YourFeature`).  
 5. Open a Pull Request.
 
-## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+##📧 Contact
 
-## Contact
-
-Your Name – [your.email@example.com](mailto:your.email@example.com)  
-Project Link: https://github.com/<your-username>/blogify
-
+Created by Alfez Tintoiya — feel free to reach out for feedback or questions!
+<p>
+  <a href="https://www.linkedin.com/in/alfez-tintoiya/" rel="nofollow noreferrer">
+    <img src="https://i.sstatic.net/gVE0j.png" alt="linkedin"> LinkedIn
+  </a> &nbsp; 
+  <a href="https://github.com/alfeztintoiya" rel="nofollow noreferrer">
+    <img src="https://i.sstatic.net/tskMh.png" alt="github"> Github
+  </a>
+</p>
